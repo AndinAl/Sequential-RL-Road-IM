@@ -1,7 +1,8 @@
 # Sequential RL for Spatial-Temporal Road-Network Influence Maximization
 
 This repository implements a deterministic paired-shortlist reinforcement-learning framework for sequential seed selection on dynamic road networks with capacity, interruption, and imputation-confidence signals.
-
+## Acknowledge
+OpenAI Codex helped with organizing code, refactoring, drafting documentation, and checking reproducibility during the development of this repository. The author made all scientific decisions, handled validation and interpretation, and took full responsibility for the work.
 ## Pipeline
 
 ```text
