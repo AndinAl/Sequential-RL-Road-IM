@@ -1,0 +1,2 @@
+dataset,nodes,undirected_edges,directed_edges,snapshots,train_snapshots,val_snapshots,test_snapshots,avg_degree,date_range,notes
+MG,414,428,856,1614,1129,161,324,2.0676,2021-06-01 to 2025-10-31,Boundary-condition real road dataset with weaker coverage; RL does not beat Improved Re-rank.

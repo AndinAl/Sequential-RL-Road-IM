@@ -1,0 +1,7 @@
+dataset,policy,mean_reward,ci,mc
+RS,Final RL,68.28,"[66.90, 69.68]",0
+RS,Improved Re-rank,66.1,"[64.12, 67.80]",0
+MG,Final RL (MG),48.54,"[46.72, 50.38]",0
+MG,Improved Re-rank,53.8,"[52.54, 55.06]",0
+Synthetic,Final RL (Synthetic),837.44,"[828.22, 846.08]",0
+Synthetic,Improved Re-rank,792.04,"[780.66, 803.48]",0

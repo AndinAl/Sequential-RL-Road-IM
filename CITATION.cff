@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "Sequential RL for Spatial-Temporal Road-Network Influence Maximization"
+message: "If you use this repository or its bundled experiment outputs, please cite the accompanying manuscript."
+type: software
+authors:
+  - family-names: "Alay Lerma"
+    given-names: "Andina"
+    email: "andina.alayma@gmail.com"
+  - family-names: "Taveira"
+    given-names: "Julio C. F."
+  - family-names: "Menezes"
+    given-names: "Ronaldo"
+  - family-names: "de Lima Neto"
+    given-names: "Fernando Buarque"
+repository-code: "https://github.com/AndinAl/Sequential-RL-Road-IM"
+version: "0.2.0"
+date-released: "2026-07-07"
+license: MIT
+keywords:
+  - influence maximization
+  - sequential decision making
+  - road network
+  - reinforcement learning
+  - imputation
+  - deterministic shortlist

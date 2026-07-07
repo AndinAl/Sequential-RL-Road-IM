@@ -1,0 +1,92 @@
+dataset:
+  name: mg
+  raw_dir: data/raw/mg
+  processed_dir: data/processed/mg
+  graph_file: data/raw/mg/network_mg.json
+  traffic_file: data/raw/mg/pntc_mg_unificado.parquet
+  interruption_file: data/raw/mg/ocorrencias-interdicoes_mg_1mes.xlsx
+  output_dir: experiments/mg
+split:
+  train_fraction: 0.6
+  val_fraction: 0.2
+  test_fraction: 0.2
+  chronological: true
+imputation:
+  method_order:
+    - observed
+    - carry_forward_backward
+    - neighbor_mean
+    - edge_or_vdm_static
+    - global_train_mean
+  confidence:
+    observed: 1.0
+    carry_forward_backward: 0.8
+    neighbor_mean: 0.6
+    static_fallback: 0.3
+    global_fallback: 0.2
+shortlist:
+  K: 5
+  h: 3
+  B: 32
+  random_extra: 0
+  stable_tie_breaking: true
+  policy_neutral: true
+rl:
+  architecture: dueling_ddqn_mlp
+  hidden_dim: 64
+  learning_rate: 0.0003
+  dropout: 0.0
+  weight_decay: 0.00001
+  replay_buffer_size: 50000
+  batch_size: 32
+  gamma: 0.99
+  n_step: 3
+  target_update: polyak_tau_0.005
+  max_episodes: 200
+  early_stopping: validation_paired_gap
+  seed: 9999
+evaluation:
+  n_test_starts: 50
+  bootstrap: 5000
+  use_test_once: true
+  mc_calls_rl: 0
+  mc_calls_rerank: 0
+  compare_with:
+    - random
+    - degree
+    - pagerank
+    - betweenness
+    - temporal_strength
+    - improved_rerank
+    - greedy_mc
+    - celf
+public_shortlist_report:
+  same_starts: true
+  same_shortlists: true
+  shortlist_hash_reproducible: true
+  warnings: []
+  errors: []
+public_validation_report:
+  passed: true
+  nodes: 414
+  undirected_edges: 428
+  snapshots: 1614
+  trained_from_scratch: true
+  test_used_once: true
+  n_test_starts: 50
+  bootstrap: 5000
+  monte_carlo_inference_rl: 0
+  monte_carlo_inference_rerank: 0
+  standard_baselines_included: true
+  ablation_included: true
+  operational_figure_included: true
+  warnings:
+    - MG is a boundary condition with weaker traffic coverage and lower signal quality than RS.
+  errors: []
+public_claim:
+  selected_policy: bundled_mg_ddqn
+  paired_mean_gap: -5.26
+  ci_lo_95: -6.9
+  ci_hi_95: -3.62
+  raw_superiority_supported: false
+  safe_claim: RL does not beat Improved Re-rank on MG; this is reported as a boundary condition rather than a hidden failure.

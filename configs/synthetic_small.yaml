@@ -1,0 +1,62 @@
+dataset:
+  name: synthetic_small
+  raw_dir: data/raw/synthetic_small
+  processed_dir: data/synthetic_small
+  graph_file: data/synthetic_small/graph_edges.csv
+  traffic_file: data/synthetic_small/snapshots.csv
+  interruption_file: data/synthetic_small/snapshots.csv
+  output_dir: experiments/synthetic_small
+split:
+  train_fraction: 0.6
+  val_fraction: 0.2
+  test_fraction: 0.2
+  chronological: true
+imputation:
+  method_order:
+    - observed
+    - carry_forward_backward
+    - neighbor_mean
+    - edge_or_vdm_static
+    - global_train_mean
+  confidence:
+    observed: 1.0
+    carry_forward_backward: 0.8
+    neighbor_mean: 0.6
+    static_fallback: 0.3
+    global_fallback: 0.2
+shortlist:
+  K: 3
+  h: 2
+  B: 4
+  random_extra: 0
+  stable_tie_breaking: true
+  policy_neutral: true
+rl:
+  architecture: dueling_ddqn_mlp
+  hidden_dim: 32
+  learning_rate: 0.0005
+  dropout: 0.0
+  weight_decay: 0.00001
+  replay_buffer_size: 5000
+  batch_size: 8
+  gamma: 0.95
+  n_step: 1
+  target_update: polyak_tau_0.01
+  max_episodes: 12
+  early_stopping: best_smoke_reward
+  seed: 7
+evaluation:
+  n_test_starts: 4
+  bootstrap: 256
+  use_test_once: true
+  mc_calls_rl: 0
+  mc_calls_rerank: 0
+  compare_with:
+    - random
+    - degree
+    - pagerank
+    - betweenness
+    - temporal_strength
+    - improved_rerank
+    - greedy_mc
+    - celf

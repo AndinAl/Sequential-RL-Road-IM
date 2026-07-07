@@ -1,0 +1,8 @@
+{
+  "name": "synthetic_small",
+  "description": "Tiny deterministic dynamic road-style graph used for smoke testing.",
+  "budget": 3,
+  "snapshots": 4,
+  "nodes": 6,
+  "edges": 8
+}

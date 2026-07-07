@@ -1,0 +1,4 @@
+dataset,policy,paired_gap,ci_low,ci_high,supported
+RS,Final RL,2.18,0.66,3.76,True
+MG,Final RL (MG),-5.26,-6.9,-3.62,False
+Synthetic,Final RL (Synthetic),45.4,32.86,58.06,True

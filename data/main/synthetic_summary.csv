@@ -1,0 +1,2 @@
+dataset,nodes,undirected_edges,directed_edges,snapshots,train_snapshots,val_snapshots,test_snapshots,avg_degree,date_range,notes
+Synthetic dense-road,1200,7200,14400,480,336,48,96,12.0,synthetic snapshot index t000 to t479,Controlled dense-road benchmark; RL beats Improved Re-rank in the released claim set.

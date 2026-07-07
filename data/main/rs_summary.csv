@@ -1,0 +1,2 @@
+dataset,nodes,undirected_edges,directed_edges,snapshots,train_snapshots,val_snapshots,test_snapshots,avg_degree,date_range,notes
+RS,395,426,852,1614,1064,54,496,2.157,2021-06-01 to 2025-10-31,Real road dataset with deterministic paired-shortlist evaluation; RL beats Improved Re-rank.

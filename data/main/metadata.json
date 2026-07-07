@@ -1,0 +1,108 @@
+{
+  "summary_columns": [
+    {
+      "name": "dataset",
+      "description": "Dataset label used in the paper-facing public release."
+    },
+    {
+      "name": "nodes",
+      "description": "Number of graph nodes."
+    },
+    {
+      "name": "undirected_edges",
+      "description": "Number of undirected road segments in the public summary."
+    },
+    {
+      "name": "directed_edges",
+      "description": "Directed edges used per snapshot when applicable."
+    },
+    {
+      "name": "snapshots",
+      "description": "Total temporal snapshots."
+    },
+    {
+      "name": "train_snapshots",
+      "description": "Training snapshot count."
+    },
+    {
+      "name": "val_snapshots",
+      "description": "Validation snapshot count."
+    },
+    {
+      "name": "test_snapshots",
+      "description": "Test snapshot count."
+    },
+    {
+      "name": "avg_degree",
+      "description": "Average undirected graph degree."
+    },
+    {
+      "name": "date_range",
+      "description": "Snapshot date range or synthetic index span."
+    },
+    {
+      "name": "notes",
+      "description": "One-line interpretation of the public result."
+    }
+  ],
+  "imputed_subset_columns": [
+    {
+      "name": "snapshot_id",
+      "description": "Temporal snapshot identifier from the imputed dataset."
+    },
+    {
+      "name": "source_id",
+      "description": "Source node identifier."
+    },
+    {
+      "name": "target_id",
+      "description": "Target node identifier."
+    },
+    {
+      "name": "edge_id",
+      "description": "Directed or undirected edge identifier used in the subset export."
+    },
+    {
+      "name": "raw_flow",
+      "description": "Observed or reconstructed raw traffic flow before interruption adjustment."
+    },
+    {
+      "name": "effective_flow",
+      "description": "Flow after interruption-aware adjustment."
+    },
+    {
+      "name": "capacity_p95",
+      "description": "Capacity proxy derived from the P95 historical flow statistic."
+    },
+    {
+      "name": "utilization",
+      "description": "Raw flow divided by capacity."
+    },
+    {
+      "name": "interruption_fraction",
+      "description": "Fraction of the snapshot affected by interruption."
+    },
+    {
+      "name": "imputation_method",
+      "description": "Dominant or derived imputation mode for the row."
+    },
+    {
+      "name": "confidence_score",
+      "description": "Imputation confidence used by the released model inputs."
+    },
+    {
+      "name": "split",
+      "description": "Chronological split label if available or derived."
+    }
+  ],
+  "sources": {
+    "rs": "Representative subset derived from local RS neighbor-imputed routes.",
+    "mg": "Representative subset derived from local MG corrected daily routes.",
+    "synthetic": "Representative subset derived from local dense synthetic neighbor-imputed routes."
+  },
+  "synthetic_integrity": {
+    "fraction_missing": 0.04,
+    "mean_confidence": 0.9832,
+    "interruption_rate": 0.008
+  }
+}

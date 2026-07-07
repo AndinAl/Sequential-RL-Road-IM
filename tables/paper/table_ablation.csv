@@ -1,0 +1,8 @@
+ablation,rs_delta,mg_delta,syn_delta
+No capacity penalty,-11.04,0.2,10.42
+No interruption penalty,0.0,0.0,0.54
+No confidence penalty,-5.26,0.26,-0.14
+No risk penalties (flow-only),-9.32,0.8,10.32
+Only capacity penalty,-5.26,0.26,-0.14
+Only interruption penalty,-9.32,0.8,9.52
+Only confidence penalty,-11.04,0.2,10.42
