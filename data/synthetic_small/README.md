@@ -1,9 +1,17 @@
-# Synthetic Small
+# synthetic_small
 
-This tiny synthetic dataset is included for the repository smoke test.
+Lightweight road-style synthetic dataset used for smoke testing and public reproducibility.
 
-- `metadata.json`: dataset metadata and budget
-- `graph_edges.csv`: undirected road-style graph edges
-- `snapshots.csv`: per-snapshot node signals used to build deterministic shortlists and rewards
+- nodes: 24
+- snapshots: 16
+- target average degree: 4.0
+- actual average degree: 4.0
+- budget: 3
 
-It is intentionally small enough to run the full smoke pipeline in under five minutes.
+Generated with:
+`python scripts/generate_synthetic_data.py --config configs/synthetic_small.yaml --output data/synthetic_small/`
+
+Files:
+- `graph_edges.csv`: fixed road-style graph topology with spatial coordinates.
+- `snapshots.csv`: per-snapshot node signals, capacity, utilization, interruption, confidence, and split labels.
+- `metadata.json`: generation parameters and summary statistics.

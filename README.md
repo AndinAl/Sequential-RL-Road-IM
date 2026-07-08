@@ -58,6 +58,13 @@ python scripts/run_smoke_test.py --config configs/synthetic_small.yaml
 
 `data/synthetic_small/` is bundled so the smoke pipeline can run without private RS or MG inputs.
 
+## Generate Synthetic Data
+
+```bash
+python scripts/generate_synthetic_data.py --config configs/synthetic_small.yaml --output data/synthetic_small/
+python scripts/generate_synthetic_data.py --config configs/synthetic.yaml --output data/generated_synthetic/
+```
+
 ## Main Commands
 
 ```bash
@@ -81,6 +88,7 @@ The large RS, MG, and dense synthetic configs preserve the paper claims through 
 ## Data Availability
 
 - Full raw RS and MG data are not committed.
+- `scripts/generate_synthetic_data.py` and the synthetic configs are included for public regeneration of road-style synthetic datasets.
 - `data/main/` contains lightweight dataset summaries.
 - `data/imputed_subset/` contains representative schema-preserving samples, not the full imputed datasets.
 - `data/synthetic_small/` is included for runnable smoke tests.

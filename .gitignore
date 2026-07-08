@@ -1,6 +1,7 @@
 data/raw/*
 data/processed/*
 data/full_imputed/*
+data/generated_synthetic/
 data/rs_road_24h_capacity/
 data/rs_road_24h_capacity_neighbor_imputed/
 /artifacts/

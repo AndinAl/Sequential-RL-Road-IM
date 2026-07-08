@@ -6,6 +6,20 @@ dataset:
   traffic_file: data/synthetic_small/snapshots.csv
   interruption_file: data/synthetic_small/snapshots.csv
   output_dir: experiments/synthetic_small
+generation:
+  description: Lightweight road-style synthetic dataset used for smoke testing and public reproducibility.
+  nodes: 24
+  snapshots: 16
+  avg_degree: 4.0
+  seed: 7
+  budget: 3
+  width_km: 90.0
+  height_km: 60.0
+  corridor_count: 3
+  capacity_floor: 105.0
+  capacity_scale: 48.0
+  base_missing_rate: 0.03
+  disruption_missing_rate: 0.08
 split:
   train_fraction: 0.6
   val_fraction: 0.2

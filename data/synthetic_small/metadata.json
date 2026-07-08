@@ -1,8 +1,28 @@
 {
   "name": "synthetic_small",
-  "description": "Tiny deterministic dynamic road-style graph used for smoke testing.",
+  "description": "Lightweight road-style synthetic dataset used for smoke testing and public reproducibility.",
+  "seed": 7,
   "budget": 3,
-  "snapshots": 4,
-  "nodes": 6,
-  "edges": 8
+  "nodes": 24,
+  "edges": 48,
+  "avg_degree_target": 4.0,
+  "avg_degree_actual": 4.0,
+  "snapshots": 16,
+  "width_km": 90.0,
+  "height_km": 60.0,
+  "corridor_count": 3,
+  "train_snapshots": 10,
+  "val_snapshots": 3,
+  "test_snapshots": 3,
+  "disruption_snapshots": 3,
+  "missing_fraction": 0.0495,
+  "low_confidence_fraction": 0.0495,
+  "mean_capacity": 169.2092,
+  "generated_by": "scripts/generate_synthetic_data.py",
+  "output_files": [
+    "graph_edges.csv",
+    "snapshots.csv",
+    "metadata.json",
+    "README.md"
+  ]
 }

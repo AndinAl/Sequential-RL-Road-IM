@@ -1,28 +1,44 @@
 # Data Overview
 
-This repository keeps only lightweight public data needed for understanding the pipeline and running the smoke test.
+This repository keeps only the lightweight public data needed for smoke testing, synthetic reproducibility, and paper-facing dataset summaries.
+
+## Dataset Overview
+
+- RS real road-network experiment.
+- MG real road-network experiment.
+- Synthetic dense-road benchmark.
+- `synthetic_small` smoke-test dataset.
 
 ## Included
 
-- `data/main/`: summary tables for RS, MG, and the dense synthetic benchmark.
-- `data/synthetic_small/`: a runnable toy dataset used by `scripts/run_smoke_test.py`.
-- `data/imputed_subset/`: representative schema-preserving samples from the imputed RS, MG, and synthetic datasets.
+- `data/synthetic_small/`: a runnable synthetic smoke-test dataset.
+- `scripts/generate_synthetic_data.py`: the public synthetic data generation entry point.
+- `configs/synthetic.yaml` and `configs/synthetic_small.yaml`: synthetic generation and evaluation configs.
+- `data/imputed_subset/`: representative imputed subsets that show the model input schema.
+- `data/main/`: dataset summaries, including the dense synthetic benchmark summary.
 
 ## Not Included
 
-- Full raw RS and MG data are not committed because they may be large, licensed, or restricted.
-- Full processed datasets and full imputed datasets are not committed in this public release.
+- Full raw RS traffic and interruption data.
+- Full raw MG traffic and interruption data.
+- Full large processed or imputed RS and MG datasets.
+- Checkpoints, experiment artifacts, archived runs, and temporary files.
 
 ## Reproducibility Notes
 
-- The files in `data/imputed_subset/` are representative samples, not the full datasets.
-- The subset files are included to show the expected model input format.
-- `data/synthetic_small/` is included so the repository remains runnable without private data.
-- Full processed data can be regenerated with the preprocessing scripts if the raw inputs are available.
+- `data/synthetic_small/` is committed so the public smoke pipeline can run immediately.
+- `data/main/synthetic_summary.csv` and `data/imputed_subset/synthetic_imputed_subset.csv` provide lightweight synthetic benchmark context without committing the full large dense-road dataset.
+- `data/imputed_subset/` files are representative samples, not full datasets.
+- Full RS and MG raw data remain excluded because of size and access restrictions.
 
-## Regeneration
+## Regenerate Synthetic Data
 
-Use the config-driven conversion step when raw inputs are available:
+```bash
+python scripts/generate_synthetic_data.py --config configs/synthetic_small.yaml --output data/synthetic_small/
+python scripts/generate_synthetic_data.py --config configs/synthetic.yaml --output data/generated_synthetic/
+```
+
+## Regenerate Processed Data When Raw Inputs Are Available
 
 ```bash
 python scripts/convert_data.py --config configs/rs.yaml
